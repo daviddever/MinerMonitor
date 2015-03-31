@@ -28,7 +28,7 @@ def check_stats(stats, workers):
     bad_workers = ['']
 
     for worker in workers:
-        if worker['last15m'] < 1500000:
+        if stats[worker]['last15m'] < 1500000:
             bad_workers.append(worker)
 
     if len(bad_workers) > 0:
@@ -63,11 +63,11 @@ def make_table(json):
 
 while True:
 
-    time.sleep(60)
+    time.sleep(900)
 
     stats = get_stats()
 
-    bad_wokers = check_stats(stats, workers)
+    bad_workers = check_stats(stats, workers)
     if bad_workers:
        table = make_table(stats)
        send_alert(alert_addresses, sender, bad_workers, stats, table)

@@ -21,7 +21,7 @@ sudo pip install -U pip
 ```
 sudo pip install virtualenv
 virtualenv venv
-source virtualenv/bin/activate
+source venv/bin/activate
 ```
 
 ### Install script requirements
