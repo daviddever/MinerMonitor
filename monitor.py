@@ -25,7 +25,7 @@ def get_stats():
 
 def check_stats(stats, workers):
 
-    bad_workers = ['']
+    bad_workers = []
 
     for worker in workers:
         if stats[worker]['last15m'] < 1500000:
